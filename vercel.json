@@ -1,13 +1,8 @@
 {
-  "buildCommand": "pnpm install --frozen-lockfile && vite build --config vite.config.vercel.ts",
+  "buildCommand": "vite build --config vite.config.vercel.ts",
   "outputDirectory": "dist/public",
   "installCommand": "pnpm install --frozen-lockfile",
   "framework": null,
-  "functions": {
-    "api/**/*.ts": {
-      "runtime": "@vercel/node@5"
-    }
-  },
   "rewrites": [
     {
       "source": "/api/trpc/:path*",
