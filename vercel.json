@@ -1,0 +1,40 @@
+{
+  "buildCommand": "pnpm install --frozen-lockfile && vite build --config vite.config.vercel.ts",
+  "outputDirectory": "dist/public",
+  "installCommand": "pnpm install --frozen-lockfile",
+  "framework": null,
+  "functions": {
+    "api/**/*.ts": {
+      "runtime": "@vercel/node@5"
+    }
+  },
+  "rewrites": [
+    {
+      "source": "/api/trpc/:path*",
+      "destination": "/api/trpc/[...trpc]"
+    },
+    {
+      "source": "/api/oauth/callback",
+      "destination": "/api/oauth/callback"
+    },
+    {
+      "source": "/api/demo-login",
+      "destination": "/api/demo-login"
+    },
+    {
+      "source": "/((?!api/).*)",
+      "destination": "/index.html"
+    }
+  ],
+  "headers": [
+    {
+      "source": "/api/(.*)",
+      "headers": [
+        { "key": "Access-Control-Allow-Credentials", "value": "true" },
+        { "key": "Access-Control-Allow-Origin", "value": "*" },
+        { "key": "Access-Control-Allow-Methods", "value": "GET,POST,OPTIONS" },
+        { "key": "Access-Control-Allow-Headers", "value": "Content-Type, Authorization" }
+      ]
+    }
+  ]
+}
