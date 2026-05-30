@@ -1,0 +1,27 @@
+{
+  "version": "7",
+  "dialect": "mysql",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "5",
+      "when": 1780097495362,
+      "tag": "0000_organic_sue_storm",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "5",
+      "when": 1780097620965,
+      "tag": "0001_free_captain_america",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "5",
+      "when": 1780101300885,
+      "tag": "0002_colossal_mac_gargan",
+      "breakpoints": true
+    }
+  ]
+}
